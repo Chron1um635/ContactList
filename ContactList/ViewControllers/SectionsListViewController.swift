@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SectionsListViewController: UITableViewController {
+final class SectionsListViewController: UITableViewController {
     
     private var contacts: [Contact]!
     
