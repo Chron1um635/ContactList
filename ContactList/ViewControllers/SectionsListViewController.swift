@@ -7,23 +7,52 @@
 
 import UIKit
 
-class SectionsListViewController: UIViewController {
-
+class SectionsListViewController: UITableViewController {
+    
+    private var contacts: [Contact]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let navigationVC = tabBarController?.viewControllers?.first as? UINavigationController
+        let contactsVC = navigationVC?.viewControllers.first as? ContactListViewController
+        contacts = contactsVC?.contacts
+        tableView.allowsSelection = false
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+// MARK: UITableViewDataSource
+extension SectionsListViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        contacts.count
+    }
+    override func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        1
+    }
+    override func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "contactCell",
+            for: indexPath
+        )
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = "Phone: \(contacts[indexPath.section].phone)"
+        content.secondaryText = "Email: \(contacts[indexPath.section].email)"
+        
+        
+        cell.contentConfiguration = content
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        contacts[section].fullname
+    }
+    
+}
+
+

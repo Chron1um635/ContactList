@@ -9,7 +9,7 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
-    private let contacts = Contact.getContacts()
+    let contacts = Contact.getContacts()
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
