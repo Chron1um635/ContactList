@@ -17,6 +17,7 @@
 		22669E812C949FAC007840F5 /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22669E802C949FAC007840F5 /* ContactDetailsViewController.swift */; };
 		22669E842C958008007840F5 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22669E832C958008007840F5 /* DataStore.swift */; };
 		22669E862C958D91007840F5 /* SectionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22669E852C958D91007840F5 /* SectionsListViewController.swift */; };
+		22ABA3872C9896920029E40E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABA3862C9896920029E40E /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		22669E802C949FAC007840F5 /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		22669E832C958008007840F5 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		22669E852C958D91007840F5 /* SectionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsListViewController.swift; sourceTree = "<group>"; };
+		22ABA3862C9896920029E40E /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				22669E6A2C949609007840F5 /* ContactListViewController.swift */,
 				22669E802C949FAC007840F5 /* ContactDetailsViewController.swift */,
 				22669E852C958D91007840F5 /* SectionsListViewController.swift */,
+				22ABA3862C9896920029E40E /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ABA3872C9896920029E40E /* TabBarViewController.swift in Sources */,
 				22669E812C949FAC007840F5 /* ContactDetailsViewController.swift in Sources */,
 				22669E842C958008007840F5 /* DataStore.swift in Sources */,
 				22669E7F2C9498C4007840F5 /* Contact.swift in Sources */,

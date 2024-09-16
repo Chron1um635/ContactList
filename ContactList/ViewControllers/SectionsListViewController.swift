@@ -9,14 +9,12 @@ import UIKit
 
 final class SectionsListViewController: UITableViewController {
     
-    private var contacts: [Contact]!
+    var contacts: [Contact]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let navigationVC = tabBarController?.viewControllers?.first as? UINavigationController
-        let contactsVC = navigationVC?.viewControllers.first as? ContactListViewController
-        contacts = contactsVC?.contacts
         tableView.allowsSelection = false
+        
     }
     
 }
@@ -29,7 +27,7 @@ extension SectionsListViewController {
         _ tableView: UITableView,
         numberOfRowsInSection section: Int
     ) -> Int {
-        1
+        2
     }
     override func tableView(
         _ tableView: UITableView,
@@ -41,9 +39,15 @@ extension SectionsListViewController {
         )
         
         var content = cell.defaultContentConfiguration()
-        content.text = "Phone: \(contacts[indexPath.section].phone)"
-        content.secondaryText = "Email: \(contacts[indexPath.section].email)"
         
+        switch indexPath.row {
+        case 0:
+            content.text = contacts[indexPath.section].phone
+            content.image = UIImage(systemName: "phone")
+        default:
+            content.text = contacts[indexPath.section].email
+            content.image = UIImage(systemName: "tray")
+        }
         
         cell.contentConfiguration = content
         return cell

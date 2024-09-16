@@ -9,12 +9,22 @@ import UIKit
 
 final class ContactListViewController: UITableViewController {
     
-    let contacts = Contact.getContacts()
+    var contacts: [Contact]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.reloadData()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let detailsVC = segue.destination as? ContactDetailsViewController
         detailsVC?.contact = contacts[indexPath.row]
+    }
+    
+    func updateData(contacts: [Contact]) {
+        self.contacts.append(contentsOf: contacts)
+        tableView.reloadData()
     }
 }
 
