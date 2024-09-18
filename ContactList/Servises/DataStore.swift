@@ -6,21 +6,21 @@
 //
 
 final class DataStore {
-    var names  = [
+    let names  = [
         "Alex",
         "Max",
         "Sergey",
         "Vladimir",
         "Vladislav"
     ]
-    var surnames = [
+    let surnames = [
         "Murphy",
         "Jankin",
         "Williams",
         "Black",
         "Bulter"
     ]
-    var phones = [
+    let phones = [
         "99999",
         "888888",
         "77777",
